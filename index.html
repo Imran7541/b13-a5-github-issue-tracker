@@ -1,0 +1,92 @@
+<!doctype html>
+<html class="invisible">
+<head>
+
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+   <title>Login</title>
+
+   <script src="https://cdn.tailwindcss.com" defer></script>
+
+   <!-- font -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+     <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+
+   <style>
+      *{
+       font-family: "Geist", sans-serif;
+      }
+   </style>
+
+    </head>
+  <body class="bg-gray-100 flex items-center justify-center min-h-screen ">
+   <div class="bg-white p-8 w-96 shadow-lg rounded-xl">
+    <img src="./assets/github-logo.png" class="mx-auto mb-6">
+    <h1 class="text-2xl font-bold text-center mb-2">
+      GitHub Issues Tracker
+     </h1>
+
+       <p class="text-center text-gray-500 mb-6">
+        Sign in to manage your issues
+         </p>
+
+  <div>
+   <span>Username</span>
+  <input
+  type="text"placeholder="Enter Username"
+    id="username"
+    class="w-full border p-2 mb-3 rounded"
+    />
+
+   <p class="text-purple-700 mb-4">Default: admin</p>
+     <span>Password</span>
+  <input type="password"placeholder="Enter Password"
+      id="password"
+       class="w-full border p-2 mb-3 rounded"/>
+
+    <p class="text-purple-700 mb-4">Default: admin123</p>
+    </div>
+
+      <button
+         onclick="login()"
+   class="w-full bg-[#4a00ff] text-white p-2 rounded-xl" 
+  >
+   Sign In
+   </button>
+
+   <div class="flex items-center mt-6">
+     <hr class="flex-1">
+     <span class="px-2">OR</span>
+    <hr class="flex-1">
+</div>
+
+   <p class="text-center text-sm mt-4">
+     <span class="font-semibold">Username</span>: admin <br>
+       <span class="font-semibold">Password</span>: admin123
+    </p>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  document.documentElement.classList.remove("invisible");
+});
+
+function login(){
+ const username = document.getElementById("username").value
+   const password = document.getElementById("password").value
+   if(username === "admin" && password === "admin123"){
+     localStorage.setItem("login","true")
+     window.location.href="dashboard.html"
+   }else{
+  alert("Invalid Credentials")
+}
+
+}
+
+</script>
+
+</body>
+</html>
